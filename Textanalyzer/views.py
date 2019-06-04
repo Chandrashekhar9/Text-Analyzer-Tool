@@ -23,7 +23,6 @@ def Analyzed(request):
             if char not in punctuations:
                 analyzed= analyzed+char
         data = analyzed
-
     if uprcs == 'on':
         Uppercase = data.upper()
         data = Uppercase
@@ -57,6 +56,7 @@ def Analyzed(request):
         for word in words:
             if word not in word_list:
                 i = i + 1
-        return render(request, 'Analyzed.html', {'result': data,'result1':sum, 'words': i, 'sndchrcnt':chrcnt})
-    return render(request, 'Analyzed.html', {'result': data})
+        return render(request, 'Analyzed.html', {'result': data,'result1':sum, 'words': i,'cbox5':chrcnt})
+    return render(request, 'Analyzed.html', {'result': data, 'cbox4':extrspc,
+                                               'cbox3':rvmnwln, 'cbox2':uprcs,'cbox1':rvmpunc,})
 
